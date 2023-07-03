@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Practicing Call Changes</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="jquery-3.7.0.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <h1> Call Changes Practice</h1>
+    <div id="tower-setup">
+        Set up for tower for call changes. <button id="show-change-info">(?)</button>
+        <div id="change-info">
+            <p>
+                This application is designed to help notice ringers get used to call changes. It is based off a <a
+                    href=https://codepen.io/orchestrali/full/wvXzVGq>similiar application by Alison Stevens</a>.
+            </p>
+            <p>
+                Call changes are a type of ringing where a conductor calls out which bells should swap places.
+                A conductor will generally keep track of the whole row,
+                but as an individual ringer you don't have to do that.
+            </p>
+            <p>
+                You do need to know:
+            <ol>
+                <li>your own bell number</li>
+                <li>the bell you are currently following</li>
+                <li>ideally the bell two places ahead of you, if there is one</li>
+            </ol>
+            It can also be helpful to keep track of what place you're in.
+            </p>
+        </div>
+
+        <br>
+        <br>
+
+
+        <label for="call-input">Call style: </label>
+        <select id="call-input">
+            <option selected value="up">Calling up</option>
+            <option value="down">Calling down</option>
+        </select><button id="show-call-info">(?)</button>
+        <div id="call-info">
+            There are two different styles of calling, you should find out which is used in your tower.
+
+            <h4>Calling up</h4>
+            <p>Starting from rounds, if you're the 3, here are the three calls that affect you.</p>
+            <p>1. "3 to 4": you move UP (later) one place and follow the 4. The 4 will now follow the bell you *were*
+                following,
+                the 2, which is good to remember if you can.
+            </p>
+            <p>2. "2 to 3": you move DOWN (earlier) one place and follow the bell that the 2 was following, the 1. This
+                is
+                why
+                it's useful to know which bell is two places ahead!
+            </p>
+            <p>3. "1 to 2": you stay in the same place but 1 and 2 swap under you. You were following the 2, but the 1
+                was
+                just
+                called to follow the 2 so now you follow the 1.</p>
+            <p>If a call doesn't include your number OR the number of the bell you're currently following, it doesn't
+                affect
+                you.</p>
+            <h4>Calling down</h4>
+            <p>Starting from rounds, if you're the 3, here are the three calls that affect you.</p>
+            <p>1. "3 to 1": you move DOWN (earlier) one place to follow the 1.</p>
+            <p>2. "4 to 2": you move UP (later) one place to follow the 4, the bell that's been called to follow the
+                bell
+                you
+                *were* following.</p>
+            <p>3. "2 to lead": you stay in place but the 1 and 2 swap below you. You now follow the 1 which was two
+                places
+                ahead. This is why it's useful to know which bell that was, though the most important thing is to keep
+                ringing
+                steadily in the same place!</p>
+        </div>
+
+        <br>
+        <br>
+
+        <label for="stage">Stage: </label>
+        <input id="stage-input" type="number" min="3" max="16" value="8"><button>(?)</button>
+        <div id="stage-info">
+            <p>The stage is the number of bells being rung. </p>
+        </div>
+
+
+        <br>
+        <br>
+
+        <label for="mybell">My bell: </label>
+        <input id="bell-input" type="number" min="1" max="8" value="3"><button id="show-bell-info">(?)</button>
+        <div id="bell-info">
+            <p>This is your bell. </p>
+        </div>
+
+        <br>
+        <br>
+
+        <button id="start-button">Start</button>
+    </div>
+
+    <br>
+
+
+    <div id="ringing-chamber">
+        <button id="back-button">Back to Setup</button> <button id="show-row">Show Row</button>
+        <br>
+        <br>
+        <div id="current-row-div">
+            Current Row: <div id="current-row"></div>
+        </div>
+        <br>
+        Call: <div id="call"></div>
+        <br>
+
+        <div>
+            <div>
+                <fieldset>
+                    <label for="following">I'm following bell: </label>
+                    <ul id="following-input"> </ul>
+                </fieldset>
+                <fieldset>
+                    <label for="myplace">My place: </label>
+                    <ul id="place-input"> </ul>
+                </fieldset>
+            </div>
+        </div>
+        <br>
+        <img id="bell-img" src="bell.png" alt="A bell">
+        <br>
+
+        <p id="message" class="results"></p>
+        <button id="check-answer" class="results">Check Answer</button>
+        <button id="show-answer" class="results">Show Answer</button>
+        <button id="next-call" class="results">Next Call</button>
+
+    </div>
+</body>
+
+</html>

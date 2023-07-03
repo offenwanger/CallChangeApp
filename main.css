@@ -1,0 +1,33 @@
+ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+fieldset {
+    width: 100px;
+    display: inline-block;
+}
+
+#change-info {
+    display: none;
+}
+
+#call-info {
+    display: none;
+}
+
+#stage-info {
+    display: none;
+}
+
+#bell-info {
+    display: none;
+}
+
+#ringing-chamber {
+    display: none;
+}
+
+#current-row-div {
+    display: none;
+}
